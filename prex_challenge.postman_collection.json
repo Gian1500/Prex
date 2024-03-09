@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "b21b4142-18e2-440a-9f06-ea65c707e21b",
+		"name": "prex_challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33491553"
+	},
+	"item": [
+		{
+			"name": "Crear nuevo cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_name\": \"Gian Curci\",\r\n    \"birth_date\": \"1997-05-28\",\r\n    \"document_number\": \"40373088\",\r\n    \"country\": \"ARG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/new_client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"new_client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nueva Transaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\": 1,\r\n    \"debit_mount\": 100.50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/new_credit_transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"new_credit_transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Balances Tienda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/store_balances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"store_balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Balances Cliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/client_balance/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client_balance",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
